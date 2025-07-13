@@ -4,17 +4,22 @@ phases:
   install:
     commands:
       - echo "Installing dependencies..."
-      - npm install
+      - npm install -g vite
+      - npm install --unsafe-perm
   build:
     commands:
       - echo "Building React app..."
-      - npm run build
+      - npx vite build  # Use npx to ensure correct vite version
   post_build:
     commands:
-      - echo "Build completed!"
-      - ls -la build/ # Verify build directory contents
+      - echo "Checking build output..."
+      - ls -la build/  # or 'dist/' if using default Vite config
+      - du -sh build/  # Check folder size
 
 artifacts:
   files:
     - '**/*'
-  base-directory: 'build' # Must match vite.config.js build.outDir
+  # Use ONE of these based on vite.config.js:
+  base-directory: 'build'  # If you set outDir: 'build'
+  # OR
+  base-directory: 'dist'   # If using default Vite config
