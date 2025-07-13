@@ -3,7 +3,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing dependencies..."
+      - echo "Installing Node.js and dependencies..."
+      - npm install -g vite  # Install Vite globally
       - npm install
   build:
     commands:
@@ -16,4 +17,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'build'  # React builds into /build folder
+  base-directory: 'build'  # Points to the React build folder
