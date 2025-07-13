@@ -12,7 +12,7 @@ function App() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Join Our Internship Program
+            Join Our Internship Program at Skills IT Academy
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Launch your career with hands-on experience in a dynamic
